@@ -14,6 +14,7 @@ public class SpApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpApiApplication.class, args);
+
     }
 
     @Bean
