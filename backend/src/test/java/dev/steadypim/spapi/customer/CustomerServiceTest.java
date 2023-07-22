@@ -41,7 +41,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -72,7 +72,7 @@ class CustomerServiceTest {
         when(customerDao.existsPersonWithEmail(email)).thenReturn(false);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "Alex", email, 19
+                "Alex", email, 19, Gender.MALE
         );
 
         underTest.addCustomer(request);
@@ -99,7 +99,7 @@ class CustomerServiceTest {
         when(customerDao.existsPersonWithEmail(email)).thenReturn(true);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "Alex", email, 19
+                "Alex", email, 19, Gender.MALE
         );
 
         assertThatThrownBy(() -> underTest.addCustomer(request))
@@ -139,7 +139,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -170,7 +170,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -198,7 +198,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -231,7 +231,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -260,7 +260,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
@@ -285,7 +285,7 @@ class CustomerServiceTest {
         int id = 10;
 
         Customer customer = new Customer(
-                id, "Alex", "alex@gmail.com", 19
+                id, "Alex", "alex@gmail.com", 19, Gender.MALE
         );
 
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));

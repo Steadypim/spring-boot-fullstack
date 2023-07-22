@@ -35,10 +35,12 @@ class CustomerRepositoryTest extends AbstractTestcontainers {
         String firstname = name.firstName();
         String lastname = name.lastName();
         String email = firstname.toLowerCase() + "." + lastname.toLowerCase() + "@steadypim.com";
+
         Customer customer = new Customer(
                 firstname + " " + lastname,
                 email,
-                20
+                20,
+                Gender.MALE
         );
 
         underTest.save(customer);
@@ -72,7 +74,8 @@ class CustomerRepositoryTest extends AbstractTestcontainers {
         Customer customer = new Customer(
                 firstname + " " + lastname,
                 email,
-                20
+                20,
+                Gender.MALE
         );
 
         underTest.save(customer);
