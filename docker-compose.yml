@@ -25,6 +25,16 @@ services:
     depends_on:
       - db
     restart: unless-stopped
+  sp-react:
+    container_name: sp-react
+    image: steadypim/sp-react
+    build:
+      context: frontend/sp-api
+    ports:
+      - "3000:5173"
+    depends_on:
+      - sp-api
+    restart: unless-stopped
 networks:
   db:
     driver: bridge
