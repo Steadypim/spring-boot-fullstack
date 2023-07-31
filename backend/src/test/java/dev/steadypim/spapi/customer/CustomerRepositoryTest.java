@@ -3,18 +3,21 @@ package dev.steadypim.spapi.customer;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import dev.steadypim.spapi.AbstractTestcontainers;
+import dev.steadypim.spapi.TestConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Import;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@Import({TestConfig.class})
 class CustomerRepositoryTest extends AbstractTestcontainers {
 
     @Autowired
@@ -39,7 +42,7 @@ class CustomerRepositoryTest extends AbstractTestcontainers {
         Customer customer = new Customer(
                 firstname + " " + lastname,
                 email,
-                20,
+                "password", 20,
                 Gender.MALE
         );
 
@@ -74,7 +77,7 @@ class CustomerRepositoryTest extends AbstractTestcontainers {
         Customer customer = new Customer(
                 firstname + " " + lastname,
                 email,
-                20,
+                "password", 20,
                 Gender.MALE
         );
 
