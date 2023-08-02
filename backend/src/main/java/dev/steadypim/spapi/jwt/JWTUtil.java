@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.security.Key;
 import java.time.Instant;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -27,6 +28,10 @@ public class JWTUtil {
         return issueToken(subject, Map.of("scopes", scopes));
     }
 
+    public String issueToken(String subject, List<String> scopes) {
+        return issueToken(subject, Map.of("scopes", scopes));
+    }
+
     public String issueToken(
             String subject,
             Map<String, Object> claims) {
@@ -34,7 +39,7 @@ public class JWTUtil {
         String token = Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
-                .setIssuer("http://steadypim.com")
+                .setIssuer("https://steadypim.com")
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(
                         Date.from(Instant.now().plus(15, DAYS))
