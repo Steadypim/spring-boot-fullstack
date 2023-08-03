@@ -41,4 +41,4 @@
 
 ## Как пользоваться
 
-Приложение можно стянуть с GitHub репозитория и запустить через docker compose или локально в IDE, либо стянуть image с DockeHub командами docker pull steadypim/sp-api -> docker pull steadypim/sp-react, после чего запустить это командой docker run (возможно потребуется postgres контейнер)
+Приложение можно стянуть с GitHub репозитория и запустить через docker compose или локально в IDE, либо стянуть image с DockeHub командами docker pull steadypim/sp-api -> docker pull steadypim/sp-react, после чего запустить
